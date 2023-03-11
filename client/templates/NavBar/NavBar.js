@@ -3,3 +3,10 @@ Template.NavBar.events({
         Meteor.logout();
     }
 });
+//Helper
+Template.NavBar.helpers({
+    'categories': function(){
+        return Categories.find().fetch();
+    },
+    rooturl: Meteor.absoluteUrl(""),
+});

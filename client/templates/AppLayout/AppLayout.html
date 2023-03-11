@@ -1,11 +1,46 @@
 <template name="AppLayout">
-
-    {{>NavBar}}
-
-    <div class="container">
-        <div class="row">
-            {{>yield}}
+    <div class="page">
+        <div class="page-main">
+          <div class="header py-4">
+            <div class="container">
+              <div class="d-flex">
+                <a class="header-brand" href="/">Kamarasta</a>
+                
+                <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
+                  <span class="header-toggler-icon"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+            <div class="container">
+                {{>NavBar}}
+            </div>
+          </div>
+          <div class="my-3 my-md-5">
+            <div class="container">
+                <div class="row">
+                {{>yield}}
+                </div>
+            </div>
+          </div>
         </div>
-    </div>
-
+        
+        <footer class="footer">
+          <div class="container">
+            <div class="row align-items-center flex-row-reverse">
+              <div class="col-auto ml-lg-auto">
+                <div class="row align-items-center">                  
+                  <div class="col-auto">
+                    "Try again, fail again. Fail better." - Samuel Beckett
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
+                Made with <i class="fe fe-heart"></i> from Indonesia
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
 </template>

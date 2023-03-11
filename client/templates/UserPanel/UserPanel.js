@@ -1,5 +1,5 @@
 Template.UserPanel.events({
-    'submit #changePassword': function() {
+    'submit': function(event) {
         event.preventDefault();
 
         var oldPW = event.target.oldPassword.value;

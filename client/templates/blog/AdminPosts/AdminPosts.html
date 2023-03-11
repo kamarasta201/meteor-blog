@@ -1,0 +1,14 @@
+<template name="AdminPosts">    
+	<div class="col-lg-12">     
+		<div class="card">   
+			<div class="card-body">
+				<h3 class="card-title">Manage Post</h3>
+				<div class="row">              
+					<div class="col-md-12">
+						{{> reactiveTable collection="posttable" settings=tableSettings}}
+					</div>              
+				</div>
+			</div>
+		</div>
+    </div> 
+</template>

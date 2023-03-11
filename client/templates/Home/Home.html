@@ -1,7 +1,49 @@
-<template name="Home">
-    <div class="text-center">
-        <h1>Home</h1>
+<template name="Home">  
+  <div class="row row-cards">    
+    <div class="col-lg-9">
+      <div class="col-lg-12">        
+        {{#each data}}
+        <div class="card card-aside">
+          <a href="#" class="card-aside-column" style="background-image: url({{thumbnail}})"></a>
+          <div class="card-body d-flex flex-column">
+          <h4><a href="{{ rooturl }}read/{{ _id }}/{{ slug }}">{{ title }}</a></h4>
+          <div class="text-muted">{{ summary }}</div>
+          <div class="d-flex align-items-center pt-5 mt-auto">            
+            <div>
+              <a href="./profile.html" class="text-default">{{ category }}</a>
+              <small class="d-block text-muted">{{ formatDate date }}</small>
+            </div>            
+          </div>        
+          </div>
+        </div>
+        {{/each}}
+      </div>
     </div>
 
-    {{>ImageSlider}}
+    <div class="col-lg-3">
+      <div class="row">
+        <div class="col-md-6 col-lg-12">
+          <div class="card card-profile">
+            <div class="card-header" style="background-image: url(https://res.cloudinary.com/digxce8dw/image/upload/v1678387601/blog/rsz_1rsz_20221021_115326_vfqfrl.jpg);"></div>
+            <div class="card-body text-center">
+              <img class="card-profile-img" src="https://res.cloudinary.com/digxce8dw/image/upload/v1678388049/blog/kamaprofile.jpg">
+              <h3 class="mb-3">Kamarasta</h3>
+              <p class="mb-4">
+                Sleep, Hike, Coffee and Code
+              </p>
+              <button class="btn btn-outline-primary btn-sm">
+                <a target="_blank" href="https://twitter.com/kamarasta"><span class="fa fa-twitter"></span> Follow</a>
+              </button>
+              <button class="btn btn-outline-primary btn-sm">
+                <a target="_blank" href="https://instagram.com/kamarasta"><span class="fa fa-instagram"></span> Follow</a>
+              </button>
+              <button class="btn btn-outline-primary btn-sm">
+                <a target="_blank" href="https://facebook.com/kamarasta"><span class="fa fa-facebook"></span> Follow</a>
+              </button>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
 </template>
